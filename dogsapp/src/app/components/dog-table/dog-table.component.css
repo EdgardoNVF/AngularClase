@@ -1,0 +1,46 @@
+.cardtitle{
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.cardbody{
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    overflow: auto;
+}
+.fullscreen-card {
+  flex: 1;
+  display: flex;
+  justify-content: center; 
+  height: 90%;
+  background-color: black;
+  opacity: 0.85;
+}
+
+
+table {
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border-right: 2px solid #353333;
+}
+
+th {
+  background-color: #0e0d0d;
+  color: #f1efef;
+  font-weight: 600;
+  font-size: 20px;
+  border-bottom: 2px solid #d0d0d0;
+}
+
+
+img {
+  border-radius: 10px;
+}
