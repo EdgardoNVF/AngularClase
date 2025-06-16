@@ -1,0 +1,21 @@
+.fullscreen-card{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    height: 85%;
+    background-color: black;
+    opacity: 0.80;
+}
+
+.cardtitle{
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 100px;
+}
+
+.cardbody{
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}

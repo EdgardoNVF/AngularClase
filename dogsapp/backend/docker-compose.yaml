@@ -1,0 +1,24 @@
+services:
+  mysqlserver:
+    container_name: mysqlserver
+    image: "mysql:8.0"
+    environment:
+      - MYSQL_ROOT_PASSWORD=netec123
+      - MYSQL_DATABASE=dogs
+    healthcheck:
+      test: mysqladmin ping -uroot -p${MYSQL_ROOT_PASSWORD} -hlocalhost
+  
+  microdog:
+    container_name: microdog
+    image: edgardovefe/angulardev:microservicedog
+    environment:
+      - IP_DB=mysqlserver
+      - PORT_DB=3306
+      - NAME_DB=dogs
+      - USER_DB=root
+      - PASSWORD_DB=netec123
+    ports:
+      - 8082:8082
+    depends_on:
+      mysqlserver:
+        condition: service_healthy
