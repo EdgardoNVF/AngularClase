@@ -1,1 +1,42 @@
-<p>shoppingcart works!</p>
+<div class="container mt-5">
+    <h2 class="mb-4">🛒 Carrito de Compras</h2>
+  
+    <div class="table-responsive">
+      <table class="table align-middle text-center">
+        <thead class="table-light">
+          <tr>
+            <th>Imagen</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+          @for (item of items(); track $index) {
+              <tr>
+            <td>
+              <img [src]="item.item.urlImage"  class="img-thumbnail" style="width: 80px; height: 80px; object-fit: cover;">
+            </td>
+            <td>{{item.item.name}}</td>
+            <td>{{item.item.amount}}</td>
+            <td>{{item.quantity}}</td>
+            <td>${{item.quantity*item.item.amount}}</td>
+            <td>
+              <button class="btn btn-outline-danger btn-sm" (click)="deleteItem(item.item.id)">
+                <i class="bi bi-trash"></i> Eliminar
+              </button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="d-flex justify-content-between align-items-center mt-4 border-top pt-3">
+      <button class="btn btn-outline-secondary" (click)="clearCart()">Vaciar carrito</button>
+      <h4>Total:{{total()}} <span class="text-success"></span></h4>
+    </div>
+  </div>

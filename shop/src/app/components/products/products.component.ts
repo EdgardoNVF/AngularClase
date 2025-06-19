@@ -5,10 +5,11 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, of } from 'rxjs';
 import { selectTotalItems } from '../../store/cart.selector';
 import { addToCart } from '../../store/cart.actions';
+import { RouterLink } from '@angular/router'
 
 @Component({
   selector: 'app-products',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
