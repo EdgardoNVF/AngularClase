@@ -1,0 +1,15 @@
+.product-card {
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .card-img-top {
+    object-fit: cover;
+    height: 200px;
+    object-fit: contain;
+  }
+  

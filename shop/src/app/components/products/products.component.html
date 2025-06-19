@@ -1,1 +1,26 @@
-<p>products works!</p>
+<div class="p-5 mb-4 rounded-3" style="background-color: rgb(218, 213, 213);">
+    <div>
+        <button class="btn btn-primary" routerLink="/cart">Ver Carrito</button>
+        <span style="font-size: 30px;">{{countItems()}}</span>
+    </div>
+    <div class="container-fluid py-5">
+        
+        <div class="row g-4">
+            @for (item of items(); track $index) {
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                <div class="card product-card w-100">
+                    <img src={{item.urlImage}} class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text">{{item.description}}</p>
+                        <p class="card-price text-primary fw-bold">${{item.amount}}</p>
+                        <button class="btn btn-sm btn-success" (click)="addToCartItem(item)" >Agregar al carrito</button>
+                    </div>
+                </div>
+
+            </div>
+
+            }
+        </div>
+    </div>
+</div>

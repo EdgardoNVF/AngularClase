@@ -13,3 +13,15 @@ export interface CartState{
 }
 
 export const initialCartState: CartState={items:[]};
+
+
+
+export interface Functions{
+   met1(dato:number):String;
+   met2():number;
+}
+
+
+
+
+
