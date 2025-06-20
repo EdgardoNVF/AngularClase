@@ -17,7 +17,7 @@ export interface Item{
 })
 export class ItemService {
   private http:HttpClient=inject(HttpClient)
-  private baseURL:string="http://localhost:8083/item";
+  private baseURL:string="/api/item";
 
   getItems():Observable<Item[]>{
      return this.http.get<Item[]>(this.baseURL)
