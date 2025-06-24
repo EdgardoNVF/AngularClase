@@ -1,0 +1,12 @@
+services:
+  keycloak:
+    image: edgardovefe/angulardev:keycloak
+    container_name: idp
+    command: start-dev
+    ports:
+      - "8080:8080"
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=pass
+    volumes:
+      - ./keycloak.conf:/opt/keycloak/conf/keycloak.conf

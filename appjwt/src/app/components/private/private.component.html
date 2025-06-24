@@ -1,0 +1,82 @@
+<div class="container-fluid mt-4">
+  <div class="row mb-4">
+    <div class="col">
+      <h2 class="fw-bold text-primary">Bienvenido {{nameUser()}} al Panel de Administración</h2>
+      <p class="text-muted">Gestiona el contenido y los usuarios de la plataforma</p>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <!-- Tarjetas de acceso rápido -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title">Usuarios</h5>
+          <p class="card-text">Ver, editar y eliminar usuarios registrados</p>
+          <button class="btn btn-outline-primary">Administrar usuarios</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title">Cursos</h5>
+          <p class="card-text">Agregar o modificar cursos disponibles</p>
+          <button class="btn btn-outline-primary">Administrar cursos</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title">Reportes</h5>
+          <p class="card-text">Estadísticas de acceso y rendimiento</p>
+          <button class="btn btn-outline-primary">Ver reportes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabla simulada -->
+  <div class="row mt-5">
+    <div class="col">
+      <h4 class="mb-3">Últimos usuarios registrados</h4>
+      <table class="table table-hover table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Ana López</td>
+            <td>ana&#64;example.com</td>
+            <td>Estudiante</td>
+            <td>
+              <button class="btn btn-sm btn-warning me-1">Editar</button>
+              <button class="btn btn-sm btn-danger">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Carlos Ruiz</td>
+            <td>carlos&#64;example.com</td>
+            <td>Instructor</td>
+            <td>
+              <button class="btn btn-sm btn-warning me-1">Editar</button>
+              <button class="btn btn-sm btn-danger">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
