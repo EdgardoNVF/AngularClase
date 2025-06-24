@@ -93,6 +93,61 @@ Obtiene todos los cursos disponibles.
 **Respuesta:**
 - `200 OK` – Devuelve una lista de objetos `Course`.
 
+**Json Schema**
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "duration": {
+          "type": "string"
+        },
+        "level": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer"
+        }
+      }
+    }
+    ]
+}
+```
+
+**Example**
+```json
+[
+	{
+		"id": 1,
+		"name": "Angular Developer",
+		"description": "Curso de angular usando la versión 19",
+		"duration": "35 horas",
+		"level": "Intermedio",
+		"price": 1000
+	},
+	{
+		"id": 2,
+		"name": "Kotlin Developer",
+		"description": "Curso de kotlin usando java 17",
+		"duration": "35 horas",
+		"level": "Intermedio",
+		"price": 1000
+	}
+]
+```
+
 ---
 
 ### 🔹 GET `/course/{id}`
@@ -108,6 +163,49 @@ Obtiene un curso específico por su ID.
 - `404 Not Found` – Si no se encuentra el curso.
 - `500 Internal Server Error` – Si ocurre un error inesperado.
 
+
+**Json Schema**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    }
+  }
+}
+```
+
+**Example**
+
+```json
+{
+	"id": 2,
+	"name": "Kotlin Developer",
+	"description": "Curso de kotlin usando java 17",
+	"duration": "35 horas",
+	"level": "Intermedio",
+	"price": 1000
+}
+```
+
 ---
 
 ### 🔹 POST `/course`
@@ -116,6 +214,42 @@ Obtiene un curso específico por su ID.
 Inserta un nuevo curso en el sistema.
 
 **Body:**
+
+**Json Schema**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "duration",
+    "level",
+    "price"
+  ]
+}
+
+```
+
+**Example**
 ```json
 {
 		"name": "Angular Developer",
@@ -138,6 +272,45 @@ Inserta un nuevo curso en el sistema.
 Actualiza los datos de un curso existente.
 
 **Body:**
+
+**Json Schema**
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "description",
+    "duration",
+    "level",
+    "price"
+  ]
+}
+
+```
+
+
 ```json
 {
 		"id": 1,
@@ -168,6 +341,15 @@ Elimina un curso existente por su ID.
 - `200 OK` – Curso eliminado correctamente.
 - `404 Not Found` – Curso no encontrado.
 - `500 Internal Server Error` – Error al eliminar el curso.
+
+**Ejemplo**
+
+```bash
+curl --request DELETE \
+  --url http://localhost:8084/course/2
+```
+
+
 ---
 
 
